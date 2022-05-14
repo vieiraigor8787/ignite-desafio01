@@ -13,12 +13,12 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
-
+console.log(tasks)
   function handleCreateNewTask() {
     if (newTaskTitle === '' || newTaskTitle.trim().length <= 3) return;
     
     const newTask = {
-      id: Math.random(),
+      id: Math.floor(Math.random()*100),
       title: newTaskTitle,
       isComplete: false
     }
